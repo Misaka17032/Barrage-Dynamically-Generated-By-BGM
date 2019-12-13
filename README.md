@@ -12,9 +12,9 @@ This repository contains a project to generate barrage game that by beats of the
 
 > Pygame
 
-If you don't have Python3, Please download it on [here](https://www.python.org/);
+If you don't have `Python3`, Please download it on [here](https://www.python.org/);
 
-If you don't have Pygame, run `pip3 install pygame` in the commandline.
+If you don't have `Pygame`, run `pip3 install pygame` in the commandline.
 
 ## Run:
 After clone this repository into your computer, run the game by `python3 start.py`.
@@ -22,4 +22,4 @@ After clone this repository into your computer, run the game by `python3 start.p
 I provide example materials in the `material/image` folder and you can put custom materials on if you want. By the way, the beats of the BGM are in `material/xml`.
 
 ## Acknowledgement:
-The Example [BGM](https://www.youtube.com/watch?v=ZQ7ipUQoik8) is provided by TheSuperMarioBros2.
+The [Example BGM](https://www.youtube.com/watch?v=ZQ7ipUQoik8) is provided by TheSuperMarioBros2.
