@@ -1,5 +1,7 @@
 # Barrage-Dynamically-Generated-By-BGM
 
+[中文说明](读我.md)
+
 ![game](material/game.png)
 
 ## What is this?
