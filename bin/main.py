@@ -139,28 +139,6 @@ def main():
                 screen.blit(our_plane.image_one, our_plane.rect)
             else:
                 screen.blit(our_plane.image_two, our_plane.rect)
-            #if (key_pressed[K_k]):
-            bullet_start = True
-            if not (delay % 5):
-                if bullet_start == True:
-                    bullet_sound.play()
-                    bullets = bullet1
-                    bullets[bullet_index].reset(our_plane.rect.midtop)
-                    bullet_index = (bullet_index + 1) % bullet_num
-                    bullet_start = False
-            for b in bullets:
-                if b.active:
-                    b.move()
-                    screen.blit(b.image, b.rect)
-                    enemies_hit = pygame.sprite.spritecollide(b, enemies, False, pygame.sprite.collide_mask)
-                    if enemies_hit:
-                        b.active = False
-                        for e in enemies_hit:
-                            e.active = False
-                        killed += 1
-                        if killed == 5:
-                            killed -= 5
-                            death -= 1
         else:
             if not (delay % 3):
                 screen.blit(our_plane.destroy_images[me_destroy_index], our_plane.rect)
@@ -169,6 +147,25 @@ def main():
                     me_down_sound.play()
                     our_plane.reset()
                     death += 1
+        if not (delay % 3):
+            bullet_sound.play()
+            bullets = bullet1
+            bullets[bullet_index].reset(our_plane.rect.midtop)
+            bullet_index = (bullet_index + 1) % bullet_num
+            bullet_start = False
+        for b in bullets:
+            if b.active:
+                b.move()
+                screen.blit(b.image, b.rect)
+                enemies_hit = pygame.sprite.spritecollide(b, enemies, False, pygame.sprite.collide_mask)
+                if enemies_hit:
+                    b.active = False
+                    for e in enemies_hit:
+                        e.active = False
+                    killed += 1
+                    if killed == 5:
+                        killed -= 5
+                        death -= 1
         enemies_down = pygame.sprite.spritecollide(our_plane, enemies, True, pygame.sprite.collide_mask)
         if enemies_down:
             our_plane.active = False
